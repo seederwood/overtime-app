@@ -15,4 +15,4 @@
 - Needs to be documented if users did not log overtime
 
 ## UI:
-Bootstrap -> formatting
+- Bootstrap -> formatting
