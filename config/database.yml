@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: Overtime_production
-  username: Overtime
+  username: ray
   password: <%= ENV['OVERTIME_DATABASE_PASSWORD'] %>
