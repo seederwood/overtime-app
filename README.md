@@ -15,9 +15,8 @@
 - Needs to be documented if users did not log overtime
 
 ## UI:
-- Bootstrap -> formatting
+- X Bootstrap -> formatting
 
 
 ## Refactor TODOS:
 - Refactor user association integration test in features/post_spec.rb
-- add full name method
