@@ -20,3 +20,4 @@
 
 ## Refactor TODOS:
 - Refactor user association integration test in features/post_spec.rb
+- add full name method
