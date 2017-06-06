@@ -15,6 +15,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.8'
   gem 'rspec-rails', '~> 3.6.0'
   gem 'selenium-webdriver'
 end
