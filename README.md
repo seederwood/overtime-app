@@ -17,7 +17,7 @@
 ## UI:
 - X Bootstrap -> formatting
 - Icons from Font Awesome
-- Update the styles for forms
+- X Update the styles for forms
 
 
 ## Refactor TODOS:
