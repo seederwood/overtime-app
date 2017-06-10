@@ -7,12 +7,14 @@
 - X User -> Devise
 - X AdminUser -> STI
 
-## Featres:
+## Features:
 - Approval workflow
 - SMS Sending -> link to approval or overtime input
 - Administrate admin dashboard
 - Email summary to managers for Approval
 - Needs to be documented if users did not log overtime
+- block non-Admin and guest users
+- customize admin searches
 
 ## UI:
 - X Bootstrap -> formatting
