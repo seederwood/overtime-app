@@ -14,7 +14,7 @@
 - Email summary to managers for Approval
 - Needs to be documented if users did not log overtime
 - block non-Admin and guest users
-- customize admin searches
+- customize admin search functionality
 
 ## UI:
 - X Bootstrap -> formatting
