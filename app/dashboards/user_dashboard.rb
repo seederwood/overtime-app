@@ -6,17 +6,16 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany,
     id: Field::Number,
-    email: Field::String,
-    password: Field::String,
-    sign_in_count: Field::Number,
-    current_sign_in_at: Field::DateTime,
-    last_sign_in_at: Field::DateTime,
+    email: Field::String.with_options(searchable: true),
+    sign_in_count: Field::Number.with_options(searchable: false),
+    current_sign_in_at: Field::DateTime.with_options(searchable: false),
+    last_sign_in_at: Field::DateTime.with_options(searchable: false),
     current_sign_in_ip: Field::String.with_options(searchable: false),
     last_sign_in_ip: Field::String.with_options(searchable: false),
-    first_name: Field::String,
-    last_name: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    first_name: Field::String.with_options(searchable: true),
+    last_name: Field::String.with_options(searchable: true),
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
     type: Field::String
   }.freeze
 
@@ -24,7 +23,6 @@ class UserDashboard < Administrate::BaseDashboard
 
   COLLECTION_ATTRIBUTES = %i[
     posts
-    id
     last_name
     first_name
     email
