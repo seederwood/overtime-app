@@ -9,14 +9,15 @@ class PostDashboard < Administrate::BaseDashboard
     date: Field::DateTime,
     rationale: Field::Text.with_options(searchable: :true),
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    status: Field::String.with_options(searchable: :true)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
 
   COLLECTION_ATTRIBUTES = %i[
-    id
     user
+    status
     date
     rationale
   ].freeze
@@ -25,6 +26,7 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     user
+    status
     id
     date
     rationale
@@ -38,6 +40,7 @@ class PostDashboard < Administrate::BaseDashboard
     user
     date
     rationale
+    status
   ].freeze
 
   # Overwrite this method to customize how posts are displayed
