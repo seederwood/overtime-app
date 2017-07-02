@@ -21,6 +21,18 @@ describe 'navigate' do
       visit posts_path
       expect(page).to have_content(/Rationale|Content/)
     end
+
+    it 'has a scope so only post creators can see posts' do
+      post1 = Post.create(date: Date.today, rationale: 'some rationale', user_id: @user.id)
+      post2 = Post.create(date: Date.today, rationale: 'some rationale', user_id: @user.id)
+
+      other_user = User.create(first_name: 'Brittany', last_name: 'Snow', email: 'britters@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
+      post_from_other_user = Post.create(date: Date.today, rationale: 'This should not be seen by other users', user_id: other_user.id)
+
+      visit posts_path
+
+      expect(page).to_not have_content(/This should not be seen by other users/)
+    end
   end
 
   describe 'new' do
@@ -34,6 +46,8 @@ describe 'navigate' do
   describe 'delete' do
     before do
       @post = FactoryGirl.create(:post)
+      # TODO: refactor
+      @post.update(user_id: @user.id)
     end
     it 'can be deleted' do
       visit posts_path
@@ -70,13 +84,13 @@ describe 'navigate' do
 
   describe 'edit' do
     before do
-      @user = FactoryGirl.create(:user)
-      login_as(@user, scope: :user)
-      @post = FactoryGirl.create(:post)
+      @other_user = User.create(first_name: 'Brittany', last_name: 'Snow', email: 'britters@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
+      login_as(@other_user, scope: :user)
+      @post_from_other_user = Post.create(date: Date.today, rationale: 'some rationale', user_id: @other_user.id)
     end
 
     it 'can be edited' do
-      visit edit_post_path(@post)
+      visit edit_post_path(@post_from_other_user)
 
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Edited content'
@@ -86,10 +100,11 @@ describe 'navigate' do
 
     it 'cannot be edited by a non-authorized user' do
       logout(:user)
-      non_authorized_user = FactoryGirl.create(:non_authorized_user)
-      login_as(non_authorized_user, scope: :user)
+      new_user = FactoryGirl.create(:user)
 
-      visit edit_post_path(@post)
+      login_as(new_user, scope: :user)
+
+      visit edit_post_path(@post_from_other_user)
 
       expect(current_path).to eq(root_path)
     end
