@@ -4,7 +4,7 @@ describe 'navigate' do
   let(:user) { FactoryGirl.create(:user) }
 
   let(:post) do
-    Post.create(date: Date.today, rationale: 'some rationale', user_id: user.id)
+    Post.create(date: Date.today, rationale: 'some rationale', user_id: user.id, overtime_request: 3.5)
   end
 
   before do
@@ -33,7 +33,7 @@ describe 'navigate' do
 
     it 'has a scope so only post creators can see posts' do
       other_user = User.create(first_name: 'Brittany', last_name: 'Snow', email: 'britters@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
-      post_from_other_user = Post.create(date: Date.today, rationale: 'This should not be seen by other users', user_id: other_user.id)
+      post_from_other_user = Post.create(date: Date.today, rationale: 'This should not be seen by other users', user_id: other_user.id, overtime_request: 3.5)
 
       visit posts_path
 
@@ -56,7 +56,7 @@ describe 'navigate' do
       delete_user = FactoryGirl.create(:user)
       login_as(delete_user, scope: :user)
 
-      post_to_delete = Post.create(date: Date.today, rationale: 'Delete me', user_id: delete_user.id)
+      post_to_delete = Post.create(date: Date.today, rationale: 'Delete me', user_id: delete_user.id, overtime_request: 3.5)
 
       visit posts_path
 
@@ -77,14 +77,14 @@ describe 'navigate' do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Some rationale'
-      click_on 'Save'
-
-      expect(page).to have_content('Some rationale')
+      fill_in 'post[overtime_request]', with: 4.5
+      expect { click_on 'Save' }. to change(Post, :count).by(1)
     end
 
     it 'will have a user associated with it' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'User association'
+      fill_in 'post[overtime_request]', with: 4.5
       click_on 'Save'
       expect(User.last.posts.last.rationale).to eq('User association')
     end
