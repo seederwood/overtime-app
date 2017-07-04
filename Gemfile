@@ -11,6 +11,7 @@ gem 'puma', '~> 3.7'
 gem 'rails'
 gem 'sass-rails'
 gem 'turbolinks', '~> 5'
+gem 'twilio-ruby', '~> 4.13'
 gem 'uglifier'
 
 group :development, :test do
