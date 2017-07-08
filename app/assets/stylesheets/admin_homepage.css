@@ -10,7 +10,11 @@
   background-color: #286185;
   color: white;
   border-radius: 3px;
-  margin: 15px;
+  margin: 12px 42px 12px 42px;
   padding: 15px;
 
+}
+
+.pending-details {
+  font-weight: 900;
 }
