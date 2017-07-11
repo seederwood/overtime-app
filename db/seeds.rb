@@ -22,8 +22,9 @@ end
 
 puts '100 Posts have been created'
 
-100.times do |_audit_log|
-  AuditLog.create(user_id: @user.id, status: 0, start_date: (Date.today - 6.days), date_verified: nil)
-end
 
-puts '100 Audit Logs have been created'
+AuditLog.create(user_id: @user.id, status: 0, start_date: (Date.today - 6.days), date_verified: nil)
+AuditLog.create(user_id: @user.id, status: 0, start_date: (Date.today - 13.days), date_verified: nil)
+AuditLog.create(user_id: @user.id, status: 0, start_date: (Date.today - 20.days), date_verified: nil)
+
+puts '3 Audit Logs have been created'
