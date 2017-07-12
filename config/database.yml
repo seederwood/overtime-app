@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: Overtime_production
-  username: ray
-  password: <%= ENV['OVERTIME_DATABASE_PASSWORD'] %>
