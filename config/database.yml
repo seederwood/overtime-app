@@ -75,6 +75,5 @@ test:
 #
 # You can use this database configuration with:
 #
-  production:
-    <<: *default
-    url: <%= ENV['HEROKU_POSTGRESQL_COPPER_URL'] %>
+ production:
+   url: <%= ENV['DATABASE_URL'] %>
