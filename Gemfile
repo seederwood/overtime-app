@@ -31,6 +31,11 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+group :production do
+  gem 'pg'
+end
+
+
 gem 'administrate'
 gem 'bourbon'
 gem 'devise', '~> 4.3'
