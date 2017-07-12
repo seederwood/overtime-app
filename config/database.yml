@@ -77,4 +77,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['HEROKU_POSTGRESQL_COPPER_URL'] %>
+  database: Overtime_production
+  username: Overtime
+  password: <%= ENV['OVERTIME_DATABASE_PASSWORD'] %>
