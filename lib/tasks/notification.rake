@@ -9,6 +9,7 @@ namespace :notification do
     #   SmsTool.send_sms()
     # end
   end
+<<<<<<< HEAD
 
   desc 'sends mail notification to managers (admin users) daily to inform of pending overtime requests'
   task manager_email: :environment do
@@ -26,4 +27,6 @@ namespace :notification do
       puts 'Success!'
     end
   end
+=======
+>>>>>>> parent of fe4227a... implement automated mailer rake task
 end
