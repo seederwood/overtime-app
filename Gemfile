@@ -19,7 +19,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
   gem 'dotenv-rails', groups: %i[development test]
-  gem 'factory_girl_rails', '~> 4.8'
+  gem 'factory_girl_rails', '~> 4.8', :require => false
   gem 'rspec-rails', '~> 3.6.0'
   gem 'selenium-webdriver'
 end
