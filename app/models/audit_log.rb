@@ -8,6 +8,8 @@ class AuditLog < ApplicationRecord
 
   before_update :set_verify
 
+  scope :by_start_date, -> { order('start_date desc') }
+
   private
 
   def set_defaults

@@ -18,10 +18,10 @@
 - X customize admin search functionality
 - X create audit log for each text message
 - X update date_verified when verified/confirmed
-- update audit_log status when request is rejected
-- update buttons on employee homepage for mobile view
-- update buttons for employees to include full date range
-- update button sort order on employee homepage
+- X update audit_log status when request is rejected
+- X update buttons on employee homepage for mobile view
+- X update buttons for employees to include full date range
+- X update button sort order on employee homepage
 - remove unnecessary navbar buttons for managers
 - fix admin dashboard
 - implement HoneyBager for error reporting
