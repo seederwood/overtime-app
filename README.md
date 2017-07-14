@@ -16,7 +16,7 @@
 - X Needs to be documented if users did not log overtime
 - X block non-Admin and guest users
 - X customize admin search functionality
-- create audit log for each text message
+- X create audit log for each text message
 - update date_verified when verified/confirmed
 - update audit_log status when request is rejected
 - update buttons on employee homepage for mobile view

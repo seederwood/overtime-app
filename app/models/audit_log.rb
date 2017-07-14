@@ -6,9 +6,16 @@ class AuditLog < ApplicationRecord
 
   after_initialize :set_defaults
 
+  before_update :set_verify
+
   private
 
   def set_defaults
     self.start_date ||= Date.today - 6.days
   end
+
+  def set_verify
+    self.date_verified = Date.today
+  end
+
 end
