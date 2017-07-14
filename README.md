@@ -18,6 +18,14 @@
 - X customize admin search functionality
 - create audit log for each text message
 - update date_verified when verified/confirmed
+- update audit_log status when request is rejected
+- update buttons on employee homepage for mobile view
+- update buttons for employees to include full date range
+- update button sort order on employee homepage
+- remove unnecessary navbar buttons for managers
+- fix admin dashboard
+- implement HoneyBager for error reporting
+- implement NewRelic for keeping the site alive
 
 ## UI:
 - X Bootstrap -> formatting
