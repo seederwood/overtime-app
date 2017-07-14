@@ -43,7 +43,10 @@ describe 'navigate' do
 
   describe 'new' do
     it 'has a link from the home page' do
+      employee = Employee.create(first_name: 'Brittany', last_name: 'Snow', email: 'britters@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', phone: '5555551212')
+      login_as(employee, :scope => :user)
       visit root_path
+
       click_link('new_post_from_nav')
       expect(page.status_code).to eq(200)
     end
