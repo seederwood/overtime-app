@@ -17,7 +17,7 @@
 - X block non-Admin and guest users
 - X customize admin search functionality
 - X create audit log for each text message
-- update date_verified when verified/confirmed
+- X update date_verified when verified/confirmed
 - update audit_log status when request is rejected
 - update buttons on employee homepage for mobile view
 - update buttons for employees to include full date range
