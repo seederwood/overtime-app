@@ -38,3 +38,4 @@ gem 'gritter'
 gem 'kaminari'
 gem 'pundit', '~> 1.1'
 gem 'rails_12factor', group: :production
+gem 'sendgrid', '~> 1.2', '>= 1.2.4'
