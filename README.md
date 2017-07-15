@@ -23,7 +23,7 @@
 - X update buttons for employees to include full date range
 - X update button sort order on employee homepage
 - X remove unnecessary navbar buttons for managers
-- fix admin dashboard
+- X fix admin dashboard
 - implement HoneyBager for error reporting
 - implement NewRelic for keeping the site alive
 
