@@ -29,7 +29,7 @@ puts '3 Audit Logs have been created'
 
 
 100.times do |post|
-  Post.create!(date: Date.today, rationale: "#{post} Iceland plaid letterpress mlkshk flannel thundercats. Microdosing salvia keytar hella plaid. Heirloom try-hard literally, small batch plaid slow-carb butcher austin flexitarian messenger bag. Offal tattooed next level, prism crucifix vice direct trade twee selvage cliche.", user_id: @employee.id, overtime_request: 2.5)
+  Post.create!(date: Date.today, rationale: "#{post} Iceland plaid letterpress mlkshk flannel thundercats. Microdosing salvia keytar hella plaid. Heirloom try-hard literally, small batch plaid slow-carb butcher austin flexitarian messenger bag. Offal tattooed next level, prism crucifix vice direct trade twee selvage cliche.", user_id: @employee.id, daily_hours: 12.5)
 end
 
 puts '100 Posts have been created'
