@@ -24,8 +24,8 @@
 - X update button sort order on employee homepage
 - X remove unnecessary navbar buttons for managers
 - X fix admin dashboard
-- implement HoneyBager for error reporting
-- implement NewRelic for keeping the site alive
+- X implement HoneyBager for error reporting
+- X implement NewRelic for keeping the site alive
 
 ## UI:
 - X Bootstrap -> formatting
