@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -36,6 +38,26 @@ RSpec.describe User, type: :model do
       @user.phone = '12345678901'
       expect(@user).to_not be_valid
     end
+
+    it 'requires the ssn attribute' do
+      @user.ssn = nil
+      expect(@user).to_not be_valid
+    end
+
+    it 'requrires the ssn attr to only include numbers' do
+      @user.ssn = 'mygreatstr'
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires the ssn to have only 4 digits' do
+      @user.ssn = 12345
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires a company' do
+      @user.company = nil
+      expect(@user).to_not be_valid
+    end
   end
 
   describe 'custom name methods' do
@@ -54,5 +76,4 @@ RSpec.describe User, type: :model do
       expect(admin.hands.count).to eq(2)
     end
   end
-
 end

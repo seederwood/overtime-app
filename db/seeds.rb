@@ -3,7 +3,9 @@
                     password_confirmation: 'asdfasdf',
                     first_name: 'Jon',
                     last_name: 'Snow',
-                    phone: '9737073878')
+                    phone: '9737073878',
+                    ssn: 1234,
+                    company: 'Beaner Pro International')
 
 puts 'employee created'
 
@@ -12,7 +14,9 @@ AdminUser.create(email: 'diva@barty.lina',
                  password_confirmation: 'asdfasdf',
                  first_name: 'Diva',
                  last_name: 'Beaner',
-                 phone: '9737073878')
+                 phone: '9737073878',
+                 ssn: 2468,
+                 company: 'Beaner Pro International')
 
 puts 'Admin user Created'
 

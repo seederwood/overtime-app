@@ -22,7 +22,9 @@ class AdminUserDashboard < Administrate::BaseDashboard
     type: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    phone: Field::String
+    phone: Field::String,
+    ssn: Field::Number.with_options(searchable: true),
+    company: Field::String.with_options(searchable: true),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,14 +33,20 @@ class AdminUserDashboard < Administrate::BaseDashboard
     posts
     last_name
     first_name
+    ssn
     email
+    company
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
 
   SHOW_PAGE_ATTRIBUTES = %i[
     posts
-    id
+    ssn
+    first_name
+    last_name
+    type
+    company
     email
     phone
     sign_in_count
@@ -46,20 +54,19 @@ class AdminUserDashboard < Administrate::BaseDashboard
     last_sign_in_at
     current_sign_in_ip
     last_sign_in_ip
-    first_name
-    last_name
     created_at
     updated_at
-    type
   ].freeze
 
   # FORM_ATTRIBUTES
 
   FORM_ATTRIBUTES = %i[
+    ssn  
     email
     password
     first_name
     last_name
+    company
     type
     phone
   ].freeze

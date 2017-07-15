@@ -10,6 +10,8 @@ FactoryGirl.define do
     password 'asdfasdf'
     password_confirmation 'asdfasdf'
     phone '5555551212'
+    ssn 1234
+    company 'Beaner Pro International'
   end
 
   factory :admin_user, class: 'AdminUser' do
@@ -19,5 +21,7 @@ FactoryGirl.define do
     password 'asdfasdf'
     password_confirmation 'asdfasdf'
     phone '5555551212'
+    ssn 2468
+    company 'Beaner Pro International'
   end
 end
